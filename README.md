@@ -132,3 +132,23 @@ And now a picture for the respective pages:
 
 ## **Details** 
 ![Details page](pictures/detail.jpeg) 
+
+# Api
+
+
+There's a app called "api" where I get the database informations and put them in a json format and people can access through the "/api/movies/id" url and use it
+
+```
+from django.db import models
+from tastypie.resources import ModelResource
+from movies.models import Movie
+
+class MovieResource(ModelResource):
+    class Meta:
+        queryset = Movie.objects.all()
+        resource_name = 'movies'
+        excludes = ['date_created']
+```
+
+## **Api** 
+![Api page](pictures/api.jpeg) 
